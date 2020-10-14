@@ -2,7 +2,7 @@
   "name": "happy-backend",
   "version": "1.0.0",
   "description": "Happy app backend server source code",
-  "main": "index.js",
+  "main": "src/server.ts",
   "repository": "git",
   "author": "cassiofb-dev",
   "license": "MIT",
@@ -17,6 +17,8 @@
     "yup": "^0.29.3"
   },
   "scripts": {
+    "start": "ts-node dist/server.js",
+    "build": "tsc -p .",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
