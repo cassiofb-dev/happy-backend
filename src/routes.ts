@@ -11,7 +11,20 @@ routes.get('/orphanages', OrphanagesController.index);
 routes.get('/orphanages/:id', OrphanagesController.show);
 routes.post('/orphanages', upload.array('images') ,OrphanagesController.create);
 
-// TEST ROUTE SHOULD BE DELETED
+// TESTS ROUTES SHOULD BE DELETED
+
+routes.get('/', (request, response) => {
+  const log = {
+    "query params": request.query,
+    "route params": request.params,
+    "body": request.body,
+  };
+
+  return response.status(418).json({
+    message: "Happy REST API: Tudo O.K.",
+    respose: log,
+  });
+});
 
 routes.get('/test/:param', (request, response) => {
   const log = {
